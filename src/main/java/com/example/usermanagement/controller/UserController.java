@@ -34,7 +34,7 @@ public class UserController {
 
         if (user != null) {
             session.setAttribute("user", user);
-            return "redirect:/home";
+            return "redirect:/dashboard";
         } else {
             model.addAttribute("error", "用户名或密码错误，或账户已被禁用");
             return "login";
@@ -70,7 +70,7 @@ public class UserController {
             return "redirect:/login";
         }
         model.addAttribute("user", user);
-        return "home";
+        return "dashboard";
     }
 
     @GetMapping("/change-password")
